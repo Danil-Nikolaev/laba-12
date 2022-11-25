@@ -1,0 +1,14 @@
+<html>
+    <body>
+        <h1>Лабораторная работа 12</h1>
+        <ul>
+            <li><a href="http://localhost:3000/calc/input">Калькулятор</a></li>
+            <% if session[:current_user_id].nil? %>
+            <li><a href="http://localhost:3000/signin">Войти</a></li>
+            <% else %>
+            <li><a href="http://localhost:3000/users">Показать всех пользователей</a></li>
+            <li><a href="http://localhost:3000/signout">Выйти</a></li>
+            <% end %>
+        </ul>
+    </body>
+</html>

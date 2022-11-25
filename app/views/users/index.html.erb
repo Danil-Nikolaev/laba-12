@@ -1,0 +1,50 @@
+<%# <p style="color: green"><%= notice </p> %>
+
+<%# <h1>Users</h1> %>
+
+<%# <div id="users"> %>
+  <%# <% @users.each do |user| %> 
+    <%# <%= render user %> 
+    <%# <p> %>
+      <%# <%= link_to "Show this user", user %> 
+    <%# </p> %>
+  <%# <% end %> 
+<%# </div> %>
+
+<%# <%= link_to "New user", new_user_path %> 
+
+
+<h1>Current login: <%=  @user_name  %></h1>
+
+<h1>Listing users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.password %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<a href="http://localhost:3000/">Главная</a>
+
+<%= link_to 'New User', new_user_path %>
